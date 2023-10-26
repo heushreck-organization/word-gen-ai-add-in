@@ -1,5 +1,5 @@
 import axios from 'axios';
-import get_json_response from './json-response';
+import get_json_response from './json-html-response';
 
 interface QAResponse {
     id: number;
@@ -44,7 +44,8 @@ const loadTemplate = async (text: string) => {
             let body = context.document.body;
             body.clear();
             await context.sync();
-            body.insertOoxml(xml, Word.InsertLocation.end);
+            // body.insertOoxml(xml, Word.InsertLocation.end);
+            body.insertHtml(xml, Word.InsertLocation.end);
             qa = (data as XMLResponse).qa;
         });
     } catch (error) {

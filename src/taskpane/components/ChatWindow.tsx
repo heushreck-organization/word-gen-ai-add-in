@@ -90,13 +90,13 @@ const ChatWindow = () => {
         setAnswer("");
         // scroll to the bottom of the chat
         var chat = document.getElementById("messages");
-        if (chat) {
-            setTimeout(function() {
-                chat.scrollTop = chat.scrollHeight;
-            }, 100); // Adjust the delay time as needed
-        }
-        const url = "https://pokeapi.co/api/v2/pokemon/" + answer.trim().toLowerCase();
-        const response = await fetchPokemonData(url);
+        // if (chat) {
+        //     setTimeout(function() {
+        //         chat.scrollTop = chat.scrollHeight;
+        //     }, 100); // Adjust the delay time as needed
+        // }
+
+        const response = "You said: " + message.content;
         var botMessage = {
             content: response,
             author: MessageAuthor.Bot,

@@ -18,7 +18,7 @@ const App = (props: AppProps) => {
 
   return (
     <div className={styles.root}>
-      <Header logo="assets/bcg.png" title={props.title} message="GEN AI Assistant" />
+      <Header logo="assets/bmw_long.png" title={props.title} message="GEN AI Assistant" />
       <Body />
     </div>
   );
