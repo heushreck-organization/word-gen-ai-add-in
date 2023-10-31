@@ -5,17 +5,17 @@
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "jsx": "react",
-    "module": "CommonJS",
+    "module": "ESNext",
     "moduleResolution": "node",
     "noImplicitReturns": true,
     "noUnusedParameters": true,
-    "outDir": "dist",
+    "outDir": "dist", // Replace with the desired output file
     "removeComments": false,
     "sourceMap": true,
-    "target": "es5",
+    "target": "ES5",
     "lib": [
-      "es7",
-      "dom"
+      "ES7",
+      "DOM"
     ],
     "pretty": true,
     "typeRoots": [

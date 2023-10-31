@@ -1,5 +1,7 @@
-import * as React from "react";
-import { Image, tokens, makeStyles } from "@fluentui/react-components";
+import React from "react";
+import { tokens } from "@fluentui/tokens";
+import { makeStyles } from "@griffel/react";
+import { Image } from "@fluentui/react-image";
 
 export interface HeaderProps {
   title: string;

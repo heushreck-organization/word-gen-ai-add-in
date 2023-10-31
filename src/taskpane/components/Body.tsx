@@ -1,18 +1,15 @@
-import * as React from "react";
-import {
-    Dropdown,
-    makeStyles,
-    Option,
-    OptionGroup,
-    shorthands,
-    useId,
-    Button,
-    Field,
-    Textarea,
-    tokens,
-  } from "@fluentui/react-components";
+import React from "react";
+import { tokens } from "@fluentui/tokens";
+import { Field } from "@fluentui/react-field";
+import { useId } from "@fluentui/react-utilities";
+import { shorthands } from "@griffel/core";
+import { makeStyles } from "@griffel/react";
+import { Option, OptionGroup } from "@fluentui/react-combobox";
+import { Textarea } from "@fluentui/react-textarea";
+import { Button } from "@fluentui/react-button";
 import { useState } from "react";
-import type { DropdownProps } from "@fluentui/react-components";
+import type { DropdownProps } from "@fluentui/react-combobox";
+import { Dropdown } from "@fluentui/react-combobox";
 import loadTemplate from "../utils/load-template";
 import type { QAResponse } from "../utils/load-template";
 import handleUserInput from "../office-document";

@@ -1,25 +1,25 @@
-/* eslint-disable no-undef */
-
-const devCerts = require("office-addin-dev-certs");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const webpack = require("webpack");
+import devCerts from "office-addin-dev-certs";
+import CopyWebpackPlugin from "copy-webpack-plugin";
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import webpack from "webpack";
 
 const urlDev = "https://localhost:3000/";
-const urlProd = "https://www.contoso.com/"; // CHANGE THIS TO YOUR PRODUCTION DEPLOYMENT LOCATION
+const urlProd = "https://genaim-dev.eu-central-1.aws.cloud.bmw/plugin/"; // CHANGE THIS TO YOUR PRODUCTION DEPLOYMENT LOCATION
+
+import path from "path";
 
 async function getHttpsOptions() {
   const httpsOptions = await devCerts.getHttpsServerOptions();
   return { ca: httpsOptions.ca, key: httpsOptions.key, cert: httpsOptions.cert };
 }
 
-module.exports = async (env, options) => {
-  const dev = options.mode === "development";
+const config = async (env, options) => {
+  const dev = "production";
   const config = {
     devtool: "source-map",
     entry: {
       polyfill: ["core-js/stable", "regenerator-runtime/runtime"],
-      vendor: ["react", "react-dom", "core-js", "@fluentui/react-components", "@fluentui/react-icons"],
+      vendor: ["react", "react-dom", "core-js", "@fluentui/react-components", "@fluentui-contrib/react-chat"],
       taskpane: ["./src/taskpane/index.tsx", "./src/taskpane/taskpane.html"],
       commands: "./src/commands/commands.ts",
     },
@@ -28,6 +28,10 @@ module.exports = async (env, options) => {
     },
     resolve: {
       extensions: [".ts", ".tsx", ".html", ".js"],
+    },
+    optimization: {
+      splitChunks: { chunks: "all" },
+      runtimeChunk: true,
     },
     module: {
       rules: [
@@ -66,6 +70,10 @@ module.exports = async (env, options) => {
           {
             from: "assets/*",
             to: "assets/[name][ext][query]",
+          },
+          {
+            from: "./node_modules/@microsoft/office-js/dist/",
+            to: "assets/office-js/",
           },
           {
             from: "manifest*.xml",
@@ -109,3 +117,5 @@ module.exports = async (env, options) => {
 
   return config;
 };
+
+export default config;
