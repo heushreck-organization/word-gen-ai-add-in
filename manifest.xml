@@ -4,7 +4,7 @@
   <Version>1.0.0.0</Version>
   <ProviderName>Contoso</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="MyReactAddIn"/>
+  <DisplayName DefaultValue="Tender Co-Pilot"/>
   <Description DefaultValue="A template to get started."/>
   <IconUrl DefaultValue="https://localhost:3000/assets/bmw-32.png"/>
   <HighResolutionIconUrl DefaultValue="https://localhost:3000/assets/bmw-64.png"/>
@@ -72,12 +72,12 @@
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
       </bt:Urls>
       <bt:ShortStrings>
-        <bt:String id="GetStarted.Title" DefaultValue="Get started with your sample add-in!"/>
+        <bt:String id="GetStarted.Title" DefaultValue="Get started with your word add-in!"/>
         <bt:String id="CommandsGroup.Label" DefaultValue="Commands Group"/>
-        <bt:String id="TaskpaneButton.Label" DefaultValue="GEN AI Assistant"/>
+        <bt:String id="TaskpaneButton.Label" DefaultValue="Tender Co-Pilot"/>
       </bt:ShortStrings>
       <bt:LongStrings>
-        <bt:String id="GetStarted.Description" DefaultValue="You added the Gen AI Assistant successfully. Go to the HOME tab and click the 'GEN AI Assistant' button to get started."/>
+        <bt:String id="GetStarted.Description" DefaultValue="You added the Tender Co-Pilot successfully. Go to the HOME tab and click the 'Tender Co-Pilot' button to get started."/>
         <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Click to Show a Taskpane"/>
       </bt:LongStrings>
     </Resources>
