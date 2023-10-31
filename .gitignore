@@ -132,3 +132,5 @@ dist
 
 test.ipynb
 page.txt
+stats.json
+.DS_Store

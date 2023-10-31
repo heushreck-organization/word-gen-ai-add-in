@@ -1,4 +1,4 @@
-import axios from 'axios';
+// import axios from 'axios';
 import get_json_response from './json-html-response';
 
 interface QAResponse {
@@ -7,24 +7,23 @@ interface QAResponse {
     search_string: string;
 }
 
-
 interface XMLResponse {
     xml: string;
     qa: QAResponse[];
 }
 
-async function fetchXMLData(url: string): Promise<Object> {
-    try {
-        const response = await axios.get(url);
-        const data = response.data;
-        // convert json data to dict
-        console.log('Data:', data);
-        return data;
-    } catch (error) {
-        console.error('Error while fetching data:', error);
-        throw error;
-    }
-}
+// async function fetchXMLData(url: string): Promise<Object> {
+//     try {
+//         const response = await axios.get(url);
+//         const data = response.data;
+//         // convert json data to dict
+//         console.log('Data:', data);
+//         return data;
+//     } catch (error) {
+//         console.error('Error while fetching data:', error);
+//         throw error;
+//     }
+// }
 
 const loadTemplate = async (text: string) => {
     var qa = [];

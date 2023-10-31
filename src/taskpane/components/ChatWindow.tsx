@@ -1,9 +1,12 @@
-import * as React from 'react';
-import { Avatar } from '@fluentui/react-components';
+import React from 'react';
+import { Avatar } from '@fluentui/react-avatar';
 import { Chat, ChatMessage, ChatMyMessage } from '@fluentui-contrib/react-chat';
-import { CompoundButton, Textarea, makeStyles } from '@fluentui/react-components';
-import { SendRegular } from '@fluentui/react-icons';
-import axios from 'axios';
+import { CompoundButton } from '@fluentui/react-button';
+import { Textarea } from '@fluentui/react-textarea';
+import { makeStyles } from '@griffel/react';
+// import { SendRegular } from '@fluentui/react-icons';
+// import axios from 'axios';
+import Icon from './Icon';
 
 
 
@@ -17,19 +20,19 @@ type MessageContent = {
     author: MessageAuthor;
 };
 
-async function fetchPokemonData(url: string): Promise<string> {
-    try {
-      const response = await axios.get(url);
-      const data = response.data;
-      const typeName = data.types[0].type.name;
-      const weight = data.weight;
-      const message = `The Pokémon is of type: ${typeName} and has a weight of ${weight} units.`;
-      return message;
-    } catch (error) {
-      console.error('Error while fetching data:', error);
-      throw error;
-    }
-  }
+// async function fetchPokemonData(url: string): Promise<string> {
+//     try {
+//       const response = await axios.get(url);
+//       const data = response.data;
+//       const typeName = data.types[0].type.name;
+//       const weight = data.weight;
+//       const message = `The Pokémon is of type: ${typeName} and has a weight of ${weight} units.`;
+//       return message;
+//     } catch (error) {
+//       console.error('Error while fetching data:', error);
+//       throw error;
+//     }
+//   }
 
 const useStyles = makeStyles({
     chatContainer: {
@@ -131,7 +134,7 @@ const ChatWindow = () => {
             </Chat>
             <div className={styles.chatInputContainer}>
                 <Textarea className={styles.chatTextarea} id={`answer`} size="medium" value={answer} placeholder="Answer here" onChange={handleAnswerChange} />
-                <CompoundButton icon={<SendRegular />} className={styles.sendIcon} onClick={handleSend} />
+                <CompoundButton icon={<Icon />} className={styles.sendIcon} onClick={handleSend} />
             </div>
             
         </div>

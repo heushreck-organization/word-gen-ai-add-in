@@ -1,7 +1,7 @@
-import * as React from "react";
+import React from "react";
 import Header from "./Header";
 import Body from "./Body";
-import { makeStyles } from "@fluentui/react-components";
+import { makeStyles } from "@griffel/react";
 
 interface AppProps {
   title: string;
